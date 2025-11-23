@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lei Kairui | Pianist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@200;300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['"Manrope"', 'sans-serif'],
+              display: ['"Italiana"', 'serif'],
+            },
+            colors: {
+              piano: {
+                black: '#050505',
+                charcoal: '#0a0a0a',
+                white: '#ffffff',
+                ivory: '#fcfcfc',
+                gold: '#bfa15f', // Slightly more muted/elegant gold
+                goldDim: '#756238',
+              }
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for sophisticated feel */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050505;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #222;
+        border-radius: 0px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #bfa15f;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      ::selection {
+        background-color: rgba(191, 161, 95, 0.2);
+        color: #fff;
+      }
+      
+      /* Subtle animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      /* Musical Note Cursor Animation */
+      @keyframes floatUp {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, 0) scale(0.5) rotate(0deg);
+        }
+        20% {
+          opacity: 0.6;
+          transform: translate(-50%, -20px) scale(1) rotate(var(--rot));
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -60px) scale(0.8) rotate(var(--rot-end));
+        }
+      }
+      
+      .note-anim {
+        animation: floatUp 1.2s ease-out forwards;
+        pointer-events: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-piano-black text-piano-ivory antialiased overflow-x-hidden cursor-default">
+    <div id="root"></div>
+  </body>
+</html>
