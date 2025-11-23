@@ -87,16 +87,18 @@
   <script type="importmap">
 {
   "imports": {
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
   }
 }
 </script>
 </head>
   <body class="bg-piano-black text-piano-ivory antialiased overflow-x-hidden cursor-default">
     <div id="root"></div>
+    <!-- 关键修复：添加 Vite 入口脚本 -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
